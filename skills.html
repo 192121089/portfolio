@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar {
+            background-color: black;
+            color: white;
+            padding: 10px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .skills {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            /* Center-align the content */
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .skill-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            visibility: hidden;
+            /* Initially hidden */
+        }
+
+        .skill {
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            opacity: 0;
+            /* Start invisible */
+            transition: opacity 0.5s;
+            /* Fade effect */
+        }
+
+        .skill.show {
+            opacity: 1;
+            /* Make visible */
+            visibility: visible;
+            /* Show the element */
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Skill colors */
+        .skill-java {
+            background-color: #f44336;
+        }
+
+        /* Red */
+        .skill-python {
+            background-color: #4caf50;
+        }
+
+        /* Green */
+        .skill-c {
+            background-color: #2196f3;
+        }
+
+        /* Blue */
+        .skill-cpp {
+            background-color: #673ab7;
+        }
+
+        /* Deep Purple */
+        .skill-javascript {
+            background-color: #ff9800;
+        }
+
+        /* Orange */
+        .skill-css {
+            background-color: #00bcd4;
+        }
+
+        /* Cyan */
+        .skill-ds {
+            background-color: #9c27b0;
+        }
+
+        /* Purple */
+        .skill-oops {
+            background-color: #3f51b5;
+        }
+
+        /* Indigo */
+        .skill-ml {
+            background-color: #ff5722;
+        }
+
+        /* Deep Orange */
+        .skill-dl {
+            background-color: #009688;
+        }
+
+        /* Teal */
+        .skill-cv {
+            background-color: #8bc34a;
+        }
+
+        /* Light Green */
+        .skill-mysql {
+            background-color: #cddc39;
+        }
+
+        /* Lime */
+        .skill-mongodb {
+            background-color: #e91e63;
+        }
+
+        /* Pink */
+        .skill-git {
+            background-color: #673ab7;
+        }
+
+        /* Deep Purple */
+        .skill-appscript {
+            background-color: #ffc107;
+        }
+
+        /* Amber */
+        .skill-appsheet {
+            background-color: #795548;
+        }
+
+        /* Brown */
+        .skill-unix {
+            background-color: #3e2723;
+        }
+
+        /* Dark Brown */
+        .skill-react {
+            background-color: #1e88e5;
+        }
+
+        /* Light Blue */
+        .skill-php {
+            background-color: #ffeb3b;
+        }
+
+        /* Yellow */
+        .skill-mern {
+            background-color: #fbc02d;
+        }
+
+        /* Amber */
+        .skill-quicklearner {
+            background-color: #2e7d32;
+        }
+
+        /* Dark Green */
+        .skill-adaptable {
+            background-color: #0288d1;
+        }
+
+        /* Light Blue */
+        .skill-hardworking {
+            background-color: #c2185b;
+        }
+
+        /* Pink */
+        .skill-timemanagement {
+            background-color: #d32f2f;
+        }
+
+        /* Dark Red */
+        .skill-teamplayer {
+            background-color: #7b1fa2;
+        }
+
+        /* Purple */
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: black;
+            color: white;
+        }
+
+        .dark-theme {
+            background-color: #121212;
+            color: white;
+        }
+
+        #showSkillButton {
+            margin-bottom: 20px;
+            /* Add some space below the button */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007bff;
+            /* Blue color for the button */
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        #showSkillButton:hover {
+            background-color: #0056b3;
+            /* Darker blue on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">Syed's Portfolio</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+               
+            </ul>
+            <button class="theme-toggle" id="theme-toggle">🌙 Dark Mode</button>
+        </nav>
+    </header>
+
+    <section class="skills">
+        <h2>Skills</h2>
+        <button id="showSkillButton">Show Next Skill</button>
+        <div class="skill-container">
+            <div class="skill skill-java">Java</div>
+            <div class="skill skill-python">Python</div>
+            <div class="skill skill-c">C</div>
+            <div class="skill skill-cpp">C++</div>
+            <div class="skill skill-javascript">JavaScript</div>
+            <div class="skill skill-css">CSS</div>
+            <div class="skill skill-ds">Data Structures</div>
+            <div class="skill skill-oops">OOPs</div>
+            <div class="skill skill-ml">Machine Learning</div>
+            <div class="skill skill-dl">Deep Learning</div>
+            <div class="skill skill-cv">Computer Vision</div>
+            <div class="skill skill-mysql">MySQL</div>
+            <div class="skill skill-mongodb">MongoDB</div>
+            <div class="skill skill-git">Git</div>
+            <div class="skill skill-appscript">AppScript</div>
+            <div class="skill skill-appsheet">AppSheet</div>
+            <div class="skill skill-unix">Unix Command-Line</div>
+            <div class="skill skill-react">React-Native</div>
+            <div class="skill skill-php">PHP</div>
+            <div class="skill skill-mern">MERN Stack</div>
+            <div class="skill skill-quicklearner">Quick Learner</div>
+            <div class="skill skill-adaptable">Adaptable</div>
+            <div class="skill skill-hardworking">Hardworking</div>
+            <div class="skill skill-timemanagement">Time Management</div>
+            <div class="skill skill-teamplayer">Team Player</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Syed Aayisha. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const skills = document.querySelectorAll('.skill');
+        let currentSkillIndex = 0;
+
+        function applyTheme(theme) {
+            const body = document.body;
+            if (theme === 'dark') {
+                body.classList.add('dark-theme');
+                body.classList.remove('light-theme');
+            } else {
+                body.classList.remove('dark-theme');
+                body.classList.add('light-theme');
+            }
+        }
+
+        // Check local storage for the theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            applyTheme(savedTheme);
+        }
+
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(newTheme);
+            localStorage.setItem('theme', newTheme); // Save preference
+            themeToggle.textContent = newTheme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+        });
+
+        // Show skills one by one
+        document.getElementById('showSkillButton').addEventListener('click', () => {
+            if (currentSkillIndex < skills.length) {
+                skills[currentSkillIndex].classList.add('show');
+                currentSkillIndex++;
+            } else {
+                alert("All skills are already displayed!");
+            }
+        });
+    </script>
+</body>
+
+</html>
