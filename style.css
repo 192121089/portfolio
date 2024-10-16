@@ -1,0 +1,104 @@
+/* Global Styles (Light Mode) */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    padding: 1rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.home {
+    text-align: center;
+    padding: 50px;
+}
+
+.profile-img img {
+    width: 200px;
+    border-radius: 50%;
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Dark Mode Styles */
+.dark-theme {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+.dark-theme header {
+    background-color: #222;
+}
+
+.dark-theme .nav-links a {
+    color: #ddd;
+}
+
+.dark-theme footer {
+    background-color: #222;
+}
+
+.dark-theme .theme-toggle {
+    color: #f0f0f0;
+}
+.projects ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.projects li {
+    margin: 20px 0;
+}
+
+.projects img {
+    width: 100%;
+    /* or specify a max-width */
+    height: auto;
+    /* maintain aspect ratio */
+    border-radius: 8px;
+}
+
+.projects a {
+    text-decoration: none;
+    color: inherit;
+    /* inherit color from parent */
+}
+
+.projects a:hover {
+    text-decoration: underline;
+}
